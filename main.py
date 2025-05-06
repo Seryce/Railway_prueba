@@ -40,10 +40,20 @@ pacientes_registrados = {}
 import os
 import requests
 
-def descargar_modelo():
+# Configuración del dispositivo
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+tokenizer = AutoTokenizer.from_pretrained("tokenizer_xlm_roberta")
+MAX_LEN = 128
+
+@app.on_event("startup")
+def cargar_modelo():
+    global model
     model_path = "triage_xlmroberta_weights.pth"
+
+    # Si no existe, intenta descargarlo
     if not os.path.exists(model_path):
-        print("Descargando modelo desde Google Drive...")
+        print("🔄 Intentando descargar modelo desde Google Drive...")
         file_id = "1TxMfYZKwUx5_SG9gHzYOdjKCavREwyQg"
         url = f"https://drive.google.com/uc?export=download&id={file_id}"
         headers = {'User-Agent': 'Mozilla/5.0'}
@@ -51,27 +61,21 @@ def descargar_modelo():
         if response.status_code == 200:
             with open(model_path, "wb") as f:
                 f.write(response.content)
-            print("Modelo descargado correctamente.")
+            print("✅ Modelo descargado desde Google Drive")
         else:
-            print("Error al descargar el modelo:", response.status_code)
+            print(f"❌ Error al descargar modelo: {response.status_code}")
+            model = None
+            return  # evita intentar cargar un modelo inexistente
 
-descargar_modelo()
-
-
-# Configuración del dispositivo
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-tokenizer = AutoTokenizer.from_pretrained("tokenizer_xlm_roberta")
-MAX_LEN = 128
-
-# Cargar modelo al iniciar
-@app.on_event("startup")
-def cargar_modelo():
-    global model
-    model = TriageRoberta(class_weights=None)  # usar la misma firma que el entrenamiento
-    model.load_state_dict(torch.load("triage_xlmroberta_weights.pth", map_location=device), strict=False)
-    model.to(device)
-    model.eval()
+    try:
+        model = TriageRoberta(class_weights=None)
+        model.load_state_dict(torch.load(model_path, map_location=device), strict=False)
+        model.to(device)
+        model.eval()
+        print("✅ Modelo cargado correctamente")
+    except Exception as e:
+        print(f"❌ Error al cargar el modelo: {e}")
+        model = None
 
 # ===============================
 # 📊 CONFIGURACIONES Y DATOS
