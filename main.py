@@ -37,6 +37,26 @@ pacientes_registrados = {}
 # ===============================
 # 🤖 CARGA DEL MODELO
 # ===============================
+import os
+import requests
+
+def descargar_modelo():
+    model_path = "triage_xlmroberta_weights.pth"
+    if not os.path.exists(model_path):
+        print("Descargando modelo desde Google Drive...")
+        file_id = "TU_ID_AQUI"
+        url = f"https://drive.google.com/uc?export=download&id={file_id}"
+        headers = {'User-Agent': 'Mozilla/5.0'}
+        response = requests.get(url, headers=headers)
+        if response.status_code == 200:
+            with open(model_path, "wb") as f:
+                f.write(response.content)
+            print("Modelo descargado correctamente.")
+        else:
+            print("Error al descargar el modelo:", response.status_code)
+
+descargar_modelo()
+
 
 # Configuración del dispositivo
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
