@@ -44,7 +44,7 @@ def descargar_modelo():
     model_path = "triage_xlmroberta_weights.pth"
     if not os.path.exists(model_path):
         print("Descargando modelo desde Google Drive...")
-        file_id = "TU_ID_AQUI"
+        file_id = "1TxMfYZKwUx5_SG9gHzYOdjKCavREwyQg"
         url = f"https://drive.google.com/uc?export=download&id={file_id}"
         headers = {'User-Agent': 'Mozilla/5.0'}
         response = requests.get(url, headers=headers)
