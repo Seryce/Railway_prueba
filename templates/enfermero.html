@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Pacientes en Triaje</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+
+  <header style="margin-bottom: 10px;">
+    <h1 style="text-align: center;">Lista de Pacientes en Triaje</h1>
+  
+    <!-- 🔍 Buscador centrado y con buen margen -->
+    <div style="display: flex; justify-content: center; margin: 10px 0;">
+      <input type="text" id="busquedaNombre" placeholder="🔍 Buscar por nombre..." oninput="filtrarPacientes()"
+             style="padding: 10px; width: 300px; border-radius: 8px; border: 1px solid #ccc; font-size: 16px;" />
+    </div>
+
+    <div style="text-align: center; margin: 10px 0;">
+      <button onclick="filtrarPorPrioridad(0)">👁 Ver todos</button>
+      <button onclick="filtrarPorPrioridad(1)">🔴 P1</button>
+      <button onclick="filtrarPorPrioridad(2)">🟠 P2</button>
+      <button onclick="filtrarPorPrioridad(3)">🟡 P3</button>
+      <button onclick="filtrarPorPrioridad(4)">🟢 P4</button>
+      <button onclick="filtrarPorPrioridad(5)">🔵 P5</button>
+    </div>
+    
+  </header>
+
+  <section class="panel-explicacion" style="margin-top: 20px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; max-width: 900px; margin: auto; padding: 0 20px;">
+      
+      <!-- ✅ Botón que muestra el panel -->
+      <button onclick="togglePanelTriaje()" class="info-btn">ℹ️ Ver cómo se decide</button>
+      
+      <!-- Botón de actualizar -->
+      <button class="boton-verde" onclick="actualizarPacientes()">🔄 Actualizar</button>
+    </div>
+  
+    <!-- Panel explicativo oculto que se despliega al pulsar -->
+    <div id="panelTriaje" class="panel-triaje">
+      <h3>🧠 ¿Cómo se decide la prioridad?</h3>
+      <ul>
+        <li><strong>🔴 Prioridad 1:</strong> Se asigna automáticamente si las constantes vitales son críticas. Se finaliza el triaje sin hacer preguntas.</li>
+        <li><strong>🟠 Prioridad 2:</strong> Se asigna si las constantes están alteradas, pero no críticas. Se continúa con preguntas clínicas.</li>
+        <li><strong>🟡🟢🔵 Prioridad 3-5:</strong> Si las constantes están normales, se realiza el triaje completo con preguntas clínicas.</li>
+        <li>📈 Las respuestas "Sí" a ciertas preguntas pueden aumentar la prioridad asignada.</li>
+      </ul>
+    </div>
+  </section>
+  
+  <!-- Tarjetas de pacientes -->
+  <main>
+    <div class="grid-container" id="listaPacientes">
+      <!-- Las tarjetas se generan dinámicamente -->
+    </div>
+  </main>
+
+  <!-- Botón de limpiar abajo del todo -->
+  <footer style="text-align: center; margin-top: 30px;">
+    <button onclick="confirmarBorrado()">🗑 Borrar pacientes</button>
+  </footer>
+
+  <script src="/static/enfermero.js" defer></script>
+</body>
+</html>
+
+

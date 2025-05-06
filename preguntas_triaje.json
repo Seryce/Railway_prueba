@@ -1,0 +1,57 @@
+{
+    "Dolor torácico": [
+      {"pregunta": "¿Te cuesta mucho respirar o sientes presión en el pecho?", "clave": "disnea", "prioridad": 1},
+      {"pregunta": "¿Te sientes muy mareado, débil o a punto de desmayarte?", "clave": "signos_shock", "prioridad": 1},
+      {"pregunta": "¿Sientes un dolor muy fuerte y constante en el pecho?", "clave": "dolor_severo", "prioridad": 2},
+      {"pregunta": "¿El dolor empezó hace más de 2 horas y ha mejorado?", "clave": "dolor_estable", "prioridad": 4}
+    ],
+    "Dificultad respiratoria": [
+      {"pregunta": "¿Te falta el aire incluso sin moverte?", "clave": "disnea_reposo", "prioridad": 1},
+      {"pregunta": "¿Tu respiración es rápida o con silbidos?", "clave": "respiracion_rapida", "prioridad": 2},
+      {"pregunta": "¿Tienes fiebre y una tos persistente?", "clave": "tos_fiebre", "prioridad": 3},
+      {"pregunta": "¿Solo te falta un poco el aire al caminar o subir escaleras?", "clave": "disnea_leve", "prioridad": 4}
+    ],
+    "Dolor abdominal": [
+      {"pregunta": "¿El dolor en el abdomen es muy fuerte y no mejora?", "clave": "dolor_abdomen_severo", "prioridad": 2},
+      {"pregunta": "¿Has vomitado varias veces o tienes la barriga muy hinchada?", "clave": "vomitos_hinchazon", "prioridad": 2},
+      {"pregunta": "¿Tienes fiebre con dolor de estómago?", "clave": "fiebre_abdomen", "prioridad": 3},
+      {"pregunta": "¿El dolor es leve o moderado y llevas varias horas así?", "clave": "dolor_moderado", "prioridad": 4}
+    ],
+    "Convulsión": [
+      {"pregunta": "¿Has tenido una convulsión en los últimos minutos?", "clave": "convulsion_activa", "prioridad": 1},
+      {"pregunta": "¿Estás confundido o no recuerdas lo que pasó?", "clave": "confusion_postictal", "prioridad": 2},
+      {"pregunta": "¿Te sientes cansado pero ya estás recuperado?", "clave": "recuperado", "prioridad": 3}
+    ],
+    "Fiebre en niños pequeños": [
+      {"pregunta": "¿El niño tiene fiebre y está muy decaído o no reacciona bien?", "clave": "decaido", "prioridad": 1},
+      {"pregunta": "¿Ha tenido fiebre muy alta o ha convulsionado?", "clave": "fiebre_convulsion", "prioridad": 2},
+      {"pregunta": "¿Tiene fiebre pero está activo y responde bien?", "clave": "fiebre_estable", "prioridad": 4}
+    ],
+    "Dolor de cabeza": [
+      {"pregunta": "¿Es el peor dolor de cabeza que has tenido en tu vida?", "clave": "cefalea_severa", "prioridad": 1},
+      {"pregunta": "¿Tienes rigidez en el cuello, fiebre o visión borrosa?", "clave": "signos_neurologicos", "prioridad": 2},
+      {"pregunta": "¿El dolor apareció de forma súbita y muy intensa?", "clave": "inicio_subito", "prioridad": 2},
+      {"pregunta": "¿Tienes dolor de cabeza leve que llevas días?", "clave": "cefalea_leve", "prioridad": 4}
+    ],
+    "Síntomas neurológicos": [
+      {"pregunta": "¿Te has desmayado o perdiste el conocimiento?", "clave": "sincopa", "prioridad": 1},
+      {"pregunta": "¿Tienes visión borrosa, dificultad para hablar o mover un lado del cuerpo?", "clave": "ictus", "prioridad": 1},
+      {"pregunta": "¿Has tenido dolor de cabeza con náuseas o vómitos?", "clave": "cefalea_fuerte", "prioridad": 2}
+    ],
+    "Alteración del comportamiento o confusión": [
+      {"pregunta": "¿Estás desorientado, no reconoces personas o lugares?", "clave": "confusion", "prioridad": 1},
+      {"pregunta": "¿Has tenido cambios de comportamiento bruscos o alucinaciones?", "clave": "alteracion_psiquica", "prioridad": 2},
+      {"pregunta": "¿Te sientes triste o muy ansioso pero sin riesgo inmediato?", "clave": "ansiedad_leve", "prioridad": 4}
+    ],
+    "Sangrado vaginal": [
+      {"pregunta": "¿Estás embarazada y sangras con dolor abdominal?", "clave": "sangrado_embarazo", "prioridad": 1},
+      {"pregunta": "¿El sangrado es muy abundante o con coágulos grandes?", "clave": "sangrado_abundante", "prioridad": 2},
+      {"pregunta": "¿Tienes sangrado leve sin otros síntomas?", "clave": "sangrado_leve", "prioridad": 4}
+    ],
+    "Otros síntomas generales": [
+      {"pregunta": "¿Tienes fiebre alta, dolor fuerte o vómitos persistentes?", "clave": "sintomas_importantes", "prioridad": 2},
+      {"pregunta": "¿Te sientes mareado, con dolor de cabeza o muy cansado?", "clave": "sintomas_leves", "prioridad": 3},
+      {"pregunta": "¿Viniste por algo leve como un chequeo o receta?", "clave": "no_urgente", "prioridad": 4}
+    ]
+}
+  

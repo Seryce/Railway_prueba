@@ -1,0 +1,12 @@
+fastapi              # Framework web backend
+uvicorn              # Servidor ASGI para producción
+jinja2               # Plantillas HTML
+pydantic             # Validación de datos (ya viene con FastAPI)
+torch                # PyTorch para IA
+shap                 # Explicabilidad
+gdown                # (opcional si descargas modelos de Google Drive)
+numpy                # Cálculos numéricos
+transformers         # HuggingFace para XLM-Roberta
+sentencepiece        # Tokenización interna de modelos
+scikit-learn         # Métricas y procesamiento
+huggingface_hub[hf_xet]

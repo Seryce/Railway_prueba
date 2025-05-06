@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triaje de Urgencias</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+    <!-- 📋 Formulario de Datos del Paciente -->
+    <div id="formularioPaciente">
+        <h2>Formulario de Triaje</h2>
+
+        <form id="triajeForm" autocomplete="off">
+            <div id="formPaso1">
+                <fieldset>
+                    <legend>🧍 Datos del Paciente</legend>
+                    <label>Nombre:
+                        <input type="text" id="nombre" required>
+                        <span class="error-mensaje" id="error-nombre"></span>
+                      </label>
+                      
+                      <label>Edad:
+                        <input type="number" id="edad" min="0" max="120" required>
+                        <span class="error-mensaje" id="error-edad"></span>
+                      </label>                      
+                </fieldset>
+                <fieldset>
+                    <legend>📝 Motivo de Consulta</legend>
+                    <label>Breve descripción de motivo:</label>
+                    <textarea id="descripcion" placeholder="Describa qué le ocurre..." required></textarea>
+                </fieldset>
+                <button type="button" onclick="irASiguientePaso()">Siguiente</button>
+            </div>
+            
+            <div id="formPaso2" style="display:none;">
+                <fieldset>
+                    <legend>🩺 Signos Vitales</legend>
+                    <div class="vitales-grid">
+                        <label>Temperatura (°C):
+                            <input type="number" id="temp" step="0.1" min="30" max="45" required>
+                            <span class="error-mensaje" id="error-temp"></span>
+                        </label>
+                        
+                        <label>Frecuencia Cardíaca:
+                            <input type="number" id="frecuencia_cardiaca" min="30" max="220" required>
+                            <span class="error-mensaje" id="error-frecuencia_cardiaca"></span>
+                        </label>
+                        
+                        <label>Presión Sistólica:
+                            <input type="number" id="pas" min="40" max="250" required>
+                            <span class="error-mensaje" id="error-pas"></span>
+                        </label>
+                        
+                        <label>Presión Diastólica:
+                            <input type="number" id="pad" min="30" max="200" required>
+                            <span class="error-mensaje" id="error-pad"></span>
+                        </label>
+                        
+                        <label>Oxígeno en Sangre (%):
+                            <input type="number" id="oxigeno" min="50" max="100" required>
+                            <span class="error-mensaje" id="error-oxigeno"></span>
+                        </label>  
+                    </div>
+                </fieldset>
+                <button type="button" id="botonContinuar" onclick="validarFormulario()">Continuar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- 🏥 Selección de Categoría -->
+    <div id="seleccionCategoria" style="display:none;">
+        <h2>Selecciona la Categoría</h2>
+        <div id="botonesCategoria"></div>
+    </div>
+
+    <!-- 🔍 Preguntas de Triaje -->
+    <div id="preguntasTriaje" style="display:none;">
+        <h2>Preguntas de Evaluación</h2>
+        <form id="formPreguntas" class="preguntas-grid"></form>
+    </div>
+
+    <!-- 📊 Resultado del Triaje -->
+    <div id="resultadoFinal" style="display:none;">
+        <h2>Resultado del Triaje</h2>
+        <p id="resultado" class="resultado-texto"></p>
+        <button onclick="reiniciarTriaje()">Reiniciar</button>
+    </div>
+
+    <script src="/static/script.js" defer></script>
+</body>
+</html>

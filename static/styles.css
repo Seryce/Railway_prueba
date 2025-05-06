@@ -1,0 +1,460 @@
+
+/* =========================================
+🌐 ESTILOS GENERALES DE LA APP
+========================================= */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+form {
+    max-width: 600px;
+    width: 90%;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: left;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+label, form label {
+    display: block;
+    margin: 10px 0;
+}
+
+.error-mensaje {
+    color: #dc3545;
+    font-size: 13px;
+    display: block;
+    margin-top: 4px;
+}
+
+
+/* =========================================
+🔘 BOTONES GENERALES
+========================================= */
+button, #botonContinuar {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#botonContinuar {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+#botonContinuar:hover {
+    background-color: #0056b3;
+}
+
+#botonContinuar:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.vitales-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin-top: 10px;
+}
+
+
+/* =========================================
+📋 SELECCIÓN DE CATEGORÍA
+========================================= */
+#seleccionCategoria {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#botonesCategoria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 12px;
+    max-width: 600px;
+    margin: auto;
+}
+
+
+#botonesCategoria button {
+    background-color: #007BFF;
+    border: 1px solid #0056b3;
+    color: white;
+    padding: 15px 25px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#botonesCategoria button:hover {
+    background-color: #0056b3;
+}
+
+
+/* =========================================
+❓ PREGUNTAS
+========================================= */
+#preguntasTriaje {
+    text-align: center;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#preguntaActual {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.botones-respuesta {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.boton-si, .boton-no {
+    width: 40%;
+    max-width: 200px;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s;
+}
+
+.boton-si {
+    background-color: #28a745;
+}
+.boton-si:hover {
+    background-color: #218838;
+}
+.boton-si:active {
+    background-color: #1e7e34;
+}
+
+.boton-no {
+    background-color: #dc3545;
+}
+.boton-no:hover {
+    background-color: #c82333;
+}
+.boton-no:active {
+    background-color: #a71d2a;
+}
+
+  
+/* =========================================
+✅ RESULTADO FINAL
+========================================= */
+#resultadoFinal {
+    text-align: center;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    border: 3px solid #ccc;
+}
+
+#resultadoFinal h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#resultado {
+    font-size: 26px;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+#resultadoFinal button {
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+    max-width: 300px;
+    background-color: #007BFF;
+    color: white;
+    transition: background 0.3s;
+}
+
+#resultadoFinal button:hover {
+    background-color: #0056b3;
+}
+
+#resultadoFinal button:active {
+    background-color: #003f7f;
+}
+
+/* =========================================
+🧑‍⚕️ PACIENTES ENFERMERO + TARJETAS
+========================================= */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.paciente-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    animation: slideFadeIn 0.4s ease-in-out;
+}
+
+.paciente-card h2 {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.paciente-card p {
+    margin: 5px 0;
+}
+
+.datos-medicos {
+    margin-top: 10px;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.borde-red    { border-left: 15px solid red; }
+.borde-orange { border-left: 15px solid orange; }
+.borde-yellow { border-left: 15px solid yellow; }
+.borde-green  { border-left: 15px solid green; }
+.borde-blue   { border-left: 15px solid blue; }
+
+.fondo-prioridad-1 { background-color: #ff4d4d; }   
+.fondo-prioridad-2 { background-color: #ffa64d; }   
+.fondo-prioridad-3 { background-color: #ffff66; }   
+.fondo-prioridad-4 { background-color: #85e085; }   
+.fondo-prioridad-5 { background-color: #66b3ff; }  
+
+.detalles-paciente {
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.detalles-paciente p strong {
+    display: inline-block;
+    width: 160px;
+}
+
+/* =========================================
+🧠 EXPLICACIÓN SHAP
+========================================= */
+
+/* Contenedor general */
+.shap-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+/* Estilo base para cada token */
+.shap-token {
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.95em;
+    font-weight: bold;
+    display: inline-block;
+    color: white;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, background 0.3s;
+}
+
+/* Hover efecto general */
+.shap-token:hover {
+    transform: scale(1.1);
+    opacity: 0.95;
+}
+
+/* Tokens según influencia SHAP */
+.shap-token.positivo {
+    background-color: rgba(0, 160, 0, 0.8);
+}
+
+.shap-token.negativo {
+    background-color: rgba(200, 0, 0, 0.8);
+}
+
+/* Estilo general del bloque explicativo */
+#explicacionIA {
+    max-width: 100%;
+    overflow-x: auto;
+    word-wrap: break-word;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+📱 RESPONSIVE
+========================================= */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    input[type="text"], button {
+        width: 100% !important;
+        font-size: 16px;
+    }
+
+    .paciente-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .datos-medicos p {
+        font-size: 13px;
+    }
+
+    #resultadoFinal {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .botones-respuesta button {
+        font-size: 18px;
+        padding: 12px;
+    }
+}
+
+/* =========================================
+🎞️ ANIMACIONES
+========================================= */
+@keyframes slideFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.info-btn {
+    background-color: #17a2b8;
+    color: white;
+    padding: 10px 18px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.info-btn:hover {
+    background-color: #138496;
+}
+
+.panel-triaje {
+    display: none;
+    background-color: #f1f8ff;
+    border-left: 5px solid #007BFF;
+    padding: 15px 20px;
+    margin: 10px auto 20px auto;
+    max-width: 700px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+}
+
+.panel-triaje h3 {
+    color: #007BFF;
+}
+
+.panel-triaje ul {
+    padding-left: 20px;
+    list-style: none;
+}
+
+.panel-triaje li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+  #resultadoFinal, #preguntasTriaje, #formularioPaciente, #explicacionIA {
+    max-width: 700px;
+    margin: auto;
+  }
+
+  .panel-explicacion {
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+  }
+  
+
+  
+  
