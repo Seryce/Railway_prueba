@@ -7,6 +7,9 @@ WORKDIR /app
 # Copiar archivos de la app
 COPY . /app/
 
+# Copiar explícitamente el modelo, incluso si está en .gitignore
+COPY triage_xlmroberta_weights.pth /app/
+
 # Copiar tokenizer (guardado previamente)
 COPY tokenizer_xlm_roberta/ /app/tokenizer_xlm_roberta/
 
@@ -29,5 +32,4 @@ EXPOSE 8000
 
 # Comando de inicio
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
-
 
